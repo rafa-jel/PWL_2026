@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\LevelController;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/level', [LevelController::class, 'index']);
 
 Route::resource('photos', PhotoController::class);
 
